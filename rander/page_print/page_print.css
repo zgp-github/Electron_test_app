@@ -1,0 +1,28 @@
+.title {
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+}
+
+ol li {
+    list-style: none;
+    color: #413F43;
+    font-size: 26px;
+    line-height: 40px;
+    position: relative;
+}
+
+ol li:hover {
+    background-color: #FCF6E5;
+}
+
+ol li:hover:after {
+    font-size: 20px;
+    border: 1px solid #AB3319;
+    border-radius: 5px;
+    content: attr(data);
+    position: absolute;
+    right: 0;
+    opacity: 1;
+    transition: all 0.2s ease-out;
+}

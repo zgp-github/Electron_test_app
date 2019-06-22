@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Electron Test</title>
+</head>
+
+<style>
+  body {
+    padding: 0;
+    margin: 0;
+    background-color: #FCF6E5;
+    text-align: center;
+  }
+
+  button {
+    height: 80px;
+    font-size: 36px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    margin-top: 20px;
+  }
+
+  #bilibili {
+    color: #E5697A;
+  }
+
+  #youtube {
+    color: #A84631;
+  }
+
+  #id_settings {
+    color: #A84631;
+  }
+
+  #id_print {
+    color: #A84631;
+  }
+</style>
+
+<body>
+  <button id="bilibili" style="width: 20%">打开B站</button>
+  <button id="youtube" style="width: 20%">打开youtube</button>
+  <button id="id_settings" style="width: 20%">Settings</button>
+  <button id="id_print" style="width: 20%">Print</button>
+  <button id="id_qrcode" style="width: 20%">QR code</button>
+  <button id="id_msgbox" style="width: 20%">Msg Box</button>
+  <button id="id_test1" style="width: 20%">test 1</button>
+  <button id="id_test2" style="width: 20%">test 2</button>
+</body>
+
+<script>
+  const path = require("path");
+  const electron = require("electron");
+
+  let BrowserWindow = electron.remote.BrowserWindow;
+
+  let bilibiliWindow = null;
+  let youtubeWindow = null;
+  let settings = null;
+
+  document.getElementById("bilibili").onclick = function () {
+    bilibiliWindow = new BrowserWindow({
+      width: 1000,
+      height: 800
+    })
+
+    bilibiliWindow.loadURL("https://bilibili.com/");
+    bilibiliWindow.on("close", function () {
+      bilibiliWindow = null;
+
+    })
+  }
+
+  document.getElementById("youtube").onclick = function () {
+    youtubeWindow = new BrowserWindow({
+      width: 1000,
+      height: 800
+    })
+
+    youtubeWindow.loadURL("https://youtube.com/");
+    youtubeWindow.on("close", function () {
+      youtubeWindow = null;
+    })
+  }
+
+  // Settings page
+  document.getElementById("id_settings").onclick = function () {
+    settings = new BrowserWindow({
+      width: 1000,
+      height: 800
+    })
+    settings.loadURL(`file://${__dirname}/rander/page_settings/page_settings.html`);
+    settings.on("close", function () {
+      settings = null;
+    })
+  }
+
+  // Printer 
+  document.getElementById("id_print").onclick = function () {
+    settings = new BrowserWindow({
+      width: 1000,
+      height: 800
+    })
+    settings.loadURL(`file://${__dirname}/rander/page_print/page_print.html`);
+    settings.on("close", function () {
+      settings = null;
+    })
+  }
+
+  // QR code
+  document.getElementById("id_qrcode").onclick = function () {
+    settings = new BrowserWindow({
+      width: 1000,
+      height: 800
+    })
+    settings.loadURL(`file://${__dirname}/rander/page_qrcode/page_qrcode.html`);
+    settings.on("close", function () {
+      settings = null;
+    })
+  }
+
+</script>
+
+</html>

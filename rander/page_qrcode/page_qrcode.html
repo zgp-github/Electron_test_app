@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- import css -->
+    <link rel="stylesheet" type="text/css" href="page_qrcode.css">
+
+    <!-- import js -->
+    <script src="page_qrcode.js"></script>
+
+    <!-- import jquery -->
+    <script src="../../lib/jquery/jquery-3.4.1.min.js"></script>
+
+    <!-- import bootstrap -->
+    <link rel="stylesheet" type="text/css" href="../../framework/bootstrap/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="../../framework/bootstrap/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <title>QR code</title>
+</head>
+
+<body>
+    <div class="title">QR Code Test</div>
+    <ol>
+        <li data="Print test">
+            QR Code Test
+        </li>
+    </ol>
+</body>
+
+<div style="text-align: center">
+    <button id="id_button_ok" type="button" class="btn btn-success" style="margin-top: 2%; width: 10%"
+        onclick="OnCreateClick()">Create</button>
+
+    <button id="id_button_ok" type="button" class="btn btn-primary" style="margin-top: 2%; width: 10%"
+        onclick="OnExitClick()">Exit</button>
+</div>
+
+<div>
+    <img src="" alt="">
+</div>
+
+</html>
