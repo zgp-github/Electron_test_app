@@ -48,6 +48,7 @@
   <button id="id_msgbox" style="width: 20%">Msg Box</button>
   <button id="id_test1" style="width: 20%">test 1</button>
   <button id="id_test2" style="width: 20%">test 2</button>
+  <button id="id_rtsp" style="width: 20%">rtsp</button>
 </body>
 
 <script>
@@ -120,6 +121,19 @@
       settings = null;
     })
   }
+
+  // RTSP
+  document.getElementById("id_rtsp").onclick = function () {
+    settings = new BrowserWindow({
+      width: 1000,
+      height: 800
+    })
+    settings.loadURL(`file://${__dirname}/rander/page_rtsp/page_rtsp.html`);
+    settings.on("close", function () {
+      settings = null;
+    })
+  }
+
 
 </script>
 
